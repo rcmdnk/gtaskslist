@@ -48,12 +48,11 @@ def main(uselist='',items=''):
                 useflag = 1
             else:
                 for i in items:
-                    if ttitle.find(i):
+                    if ttitle.find(i) != -1:
                         useflag = 1
                         break
             if useflag == 1:
                 print ttitle.encode('utf_8')
-                print t
 
 if __name__ == '__main__':
     # Get command line options
@@ -62,6 +61,9 @@ if __name__ == '__main__':
 
        If arg1 arg2... are given, only tasks which include
        these words (ORed) will be listed (combined with -i)
+
+       If you have not installed google-api-python-client, follow:
+       https://developers.google.com/api-client-library/python/start/installation
        '''
     parser = OptionParser(usage)
     parser.add_option('-l','--list',action='store',
