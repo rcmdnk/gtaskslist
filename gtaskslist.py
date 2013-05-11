@@ -40,6 +40,7 @@ def main(uselist='',items=''):
         # Get tasks
         tasks = service.tasks().list(tasklist=tl['id']).execute()
         for t in tasks['items']:
+
             ttitle = t['title']
             if ttitle == '':
                 continue
